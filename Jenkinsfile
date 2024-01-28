@@ -17,11 +17,11 @@ pipeline {
             steps {
                 script {
                     echo "Deploying...."
-                    Boolean bool = fileExists 'git-script.sh'
+                    Boolean bool = fileExists 'lijstmetvrachtwagens.txt'
                     if (bool) {
-                        println "The File git-script.sh exists :)"
+                        println "De lijst met vrachtwagens is gedownload."
                     } else {
-                        println "The File git-script.sh does not exist :("
+                        println "De lijst met vrachtwagens is niet gedownload."
                     }  
                 }
             }
