@@ -4,24 +4,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                    echo "Building... !!!"
+                    echo "Building."
             
             }
         }
         stage('Test') {
             steps {
-                    echo "Testing...."
+                    echo "Testing."
             }
         }
         stage('Deploy') {
             steps {
                 script {
-                    echo "Deploying...."
-                    Boolean bool = fileExists 'lijstmetvrachtwagens.txt'
-                    if (bool) {
-                        println "De lijst met vrachtwagens is gedownload."
-                    } else {
-                        println "De lijst met vrachtwagens is niet gedownload."
+                    echo "Deploying."
+                    Echo "De applicatie is gelanceerd."
                     }  
                 }
             }
