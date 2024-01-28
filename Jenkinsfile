@@ -4,29 +4,28 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building your application...'
+                    echo "Building... !!!"
+                    sh "npm --version"
             }
         }
-
         stage('Test') {
             steps {
-                echo 'Running tests...'
+                    echo "Testing...."
+                    sh "npm test"
             }
         }
-
         stage('Deploy') {
             steps {
-                echo 'Deploying your application...'
+                script {
+                    echo "Deploying...."
+                    Boolean bool = fileExists 'git-script.sh'
+                    if (bool) {
+                        println "The File git-script.sh exists :)"
+                    } else {
+                        println "The File git-script.sh does not exist :("
+                    }  
+                }
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Pipeline succeeded! Send notifications or perform additional tasks here.'
-        }
-        failure {
-            echo 'Pipeline failed! Send notifications or perform cleanup tasks here.'
         }
     }
 }
