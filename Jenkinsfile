@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     echo "Deploying."
-                    Echo "De applicatie is gelanceerd."
+                    echo "De applicatie is gelanceerd."
                     }  
                 }
             }
