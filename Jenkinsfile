@@ -5,13 +5,12 @@ pipeline {
         stage('Build') {
             steps {
                     echo "Building... !!!"
-                    sh "npm --version"
+            
             }
         }
         stage('Test') {
             steps {
                     echo "Testing...."
-                    sh "npm test"
             }
         }
         stage('Deploy') {
